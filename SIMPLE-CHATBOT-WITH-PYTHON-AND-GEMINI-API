@@ -1,0 +1,16 @@
+from google import genai
+
+# 1. Apni API key yahan likho
+client = genai.Client(api_key="AQ.Ab8RN6LqL")
+
+# 2. User se sawal pucho
+sawal = input("Apna sawal likho: ")
+
+# 3. AI ko bhej kar jawab lo
+response = client.models.generate_content(
+    model="gemini-3.8-flash", contents=sawal
+)
+
+# 4. Jawab screen par dikha do
+print("\nJawab:")
+print(response.text)
